@@ -1,11 +1,15 @@
-<form>
+<form [formGroup]="chartSearch" (ngSubmit)="onSubmit()">
   <label>
     Your First Name:
-    <input type="text" [formControl]="firstName" id="first-name" />
+    <input type="text" formControlName="firstName" id="first-name" />
   </label>
   <label>
     Date of Birth:
-    <input type="date" [formControl]="birthDate" id="date-of-birth" />
+    <input type="date" formControlName="birthDate" id="date-of-birth" />
   </label>
   <button type="submit">Find Charts</button>
 </form>
+<div class="test-answer">
+  <p>Name:</p>
+  <p>DOB:</p>
+</div>
