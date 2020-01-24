@@ -8,6 +8,8 @@ import { HomeComponent } from "./home/home.component";
 import { SearchformComponent } from "./searchform/searchform.component";
 import { ResultsComponent } from "./results/results.component";
 
+import { AngularBillboardModule } from "angular-billboard";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,13 @@ import { ResultsComponent } from "./results/results.component";
     SearchformComponent,
     ResultsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularBillboardModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
