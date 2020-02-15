@@ -8,6 +8,8 @@ import { HomeComponent } from "./home/home.component";
 import { SearchformComponent } from "./searchform/searchform.component";
 import { ResultsComponent } from "./results/results.component";
 
+import { HttpClientModule } from "@angular/common/http";
+
 import { AngularBillboardModule } from "angular-billboard";
 
 @NgModule({
@@ -22,7 +24,8 @@ import { AngularBillboardModule } from "angular-billboard";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularBillboardModule
+    AngularBillboardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

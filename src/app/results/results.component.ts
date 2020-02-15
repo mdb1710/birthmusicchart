@@ -1,15 +1,18 @@
 import { Component, OnInit } from "@angular/core";
 
+import { BillboardService, Charts } from "../billboard.service";
+
+import { RouterModule } from "@angular/router";
+
 @Component({
   selector: "app-results",
   templateUrl: "./results.component.html",
   styleUrls: ["./results.component.sass"]
 })
 export class ResultsComponent implements OnInit {
-  charts: any = [];
-  chartsOptions: any = [];
+  chartResults: Charts[] = [];
 
-  constructor() {}
+  constructor(private billboardService: BillboardService) {}
 
   ngOnInit() {}
 }

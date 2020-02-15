@@ -1,1 +1,7 @@
 <p>results works!</p>
+<ul>
+  <li *ngFor="let result of chartResults">
+    {{ result }}
+  </li>
+</ul>
+<p *ngIf="chartResults.length < 1">No Chart Results For Your Birth</p>
