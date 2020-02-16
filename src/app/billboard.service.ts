@@ -21,11 +21,7 @@ export class BillboardService {
 
   constructor(private http: HttpClient) {}
 
-  getBirthChart() {
-    return this.http.get<any>(`${this.uri}/charts`).subscribe(data => {
-      console.log(data);
-      this.charts = data;
-      return this.charts;
-    });
+  getBirthChart(date: any) {
+    return this.http.get<any>(`${this.uri}/charts/?date=${date}`);
   }
 }

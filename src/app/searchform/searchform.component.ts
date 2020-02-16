@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
-import { BillboardService } from "../billboard.service";
+import { BillboardService, Date } from "../billboard.service";
 
 @Component({
   selector: "app-searchform",
@@ -11,13 +11,15 @@ export class SearchformComponent implements OnInit {
   // firstName = new FormControl("");
   // birthDate = new FormControl("");
 
+  birthCharts;
+
   chartSearch = new FormGroup({
     firstName: new FormControl(""),
     birthDate: new FormControl("")
   });
 
-  newUser = this.chartSearch.value.firstName;
-  newDate = this.chartSearch.value.birthDate;
+  newUser: String;
+  newDate: String;
   constructor(private billboardService: BillboardService) {}
 
   ngOnInit() {}
@@ -31,8 +33,8 @@ export class SearchformComponent implements OnInit {
       this.newDate,
       this.chartSearch.value.firstName
     );
-    let results = this.billboardService.getBirthChart();
-
-    console.log("results are", results);
+    this.billboardService.getBirthChart(this.newDate).subscribe(data => {
+      this.birthCharts = data;
+    });
   }
 }

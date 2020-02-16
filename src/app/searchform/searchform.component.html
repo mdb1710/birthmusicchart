@@ -15,5 +15,17 @@
 </div>
 <div class="results-test">
   <h3>Will results show up?</h3>
-  <app-results></app-results>
+  <ul>
+    <li *ngFor="let chart of birthCharts">
+      <div>
+        <div class="artist-photo">
+          <img [src]="chart.cover" />
+        </div>
+        <p>Position: {{ chart.id }}</p>
+        <p>Song: {{ chart.title }}</p>
+        <p>Artist: {{ chart.artist }}</p>
+      </div>
+    </li>
+  </ul>
 </div>
+<app-results></app-results>
