@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { BillboardService, Date } from "../billboard.service";
+import { CompileTemplateMetadata } from '@angular/compiler';
 
 @Component({
   selector: "app-searchform",
@@ -20,6 +21,7 @@ export class SearchformComponent implements OnInit {
 
   newUser: String;
   newDate: String;
+  testDate: String;
   constructor(private billboardService: BillboardService) {}
 
   ngOnInit() {}
@@ -27,6 +29,8 @@ export class SearchformComponent implements OnInit {
   onSubmit() {
     this.newUser = this.chartSearch.value.firstName;
     this.newDate = this.chartSearch.value.birthDate;
+    
+    
     console.log(
       this.chartSearch.value,
       this.newUser,
@@ -35,6 +39,8 @@ export class SearchformComponent implements OnInit {
     );
     this.billboardService.getBirthChart(this.newDate).subscribe(data => {
       this.birthCharts = data;
+      console.log(this.birthCharts);
+      
     });
   }
 }
